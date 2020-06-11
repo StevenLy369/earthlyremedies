@@ -1,0 +1,16 @@
+  
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>All Remedies:</h1>
+
+
+    <ul>
+    <li>Name: @Model.Name</li>
+    <li>Description: @Model.Details</li>
+    <li>Ailment: @Model.Ailment</li>
+    <li>Ingredients: @Model.Ingredients</li>
+    </ul>
+
+<a href="/Remedies/Edit/@(Model.RemedyId)"><p>Edit Details</p></a>

@@ -1,0 +1,14 @@
+<h1>All Remedies:</h1>
+
+<ol>
+@foreach (Remedy remedy in Model)
+{
+    <ul>
+        <li>ID: @remedy.RemedyId</li>
+        <li>Name: @remedy.Name</li>
+       
+    </ul>
+     <a href="/Remedies/Details/@(remedy.RemedyId)"><p>View Details</p></a>
+    <br>
+}
+</ol>

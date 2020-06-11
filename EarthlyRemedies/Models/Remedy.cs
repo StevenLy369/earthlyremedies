@@ -1,10 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
-using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 
 namespace EarthlyRemedies.Models
 {
-  public class Remedy : IValidatableObject
+  public class Remedy
   {
 
     public int RemedyId { get; set; }
@@ -21,15 +23,7 @@ namespace EarthlyRemedies.Models
     public string Ingredients { get; set; }
     public int UserId { get; set; }
 
-    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-    {
-      if (!EnvironmentVariables.Categories.Contains(Category))
-      {
-        yield return new ValidationResult(
-            $"Category is not contained in Categories",
-            new[] { "Category" });
-      }
-    }
+    
   }
 
 }
